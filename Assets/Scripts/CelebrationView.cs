@@ -40,7 +40,7 @@ public class CelebrationView : MonoBehaviour
     }
     private void Start () {
         center = cube.transform;
-        transform.position = (transform.position - center.position).normalized * _radius + center.position;
+        // transform.position = (transform.position - center.position).normalized * _radius + center.position;
     }
      
     private void Update () {

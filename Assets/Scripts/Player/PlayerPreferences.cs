@@ -12,7 +12,7 @@ public class PlayerPreferences : Singleton<PlayerPreferences>
     private const string PlayerCurrentLevelKey = "PlayerCurrentLevelKey";
     private void OnEnable()
     {
-        // ResetPrefs();
+        ResetPrefs();
         _playerDiamondsCount = PlayerPrefs.GetInt(DiamondsCountKey, 0);
         _playerCurrentLevel = PlayerPrefs.GetInt(PlayerCurrentLevelKey, 1);
     }

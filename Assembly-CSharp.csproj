@@ -64,16 +64,19 @@
      <Compile Include="Assets\Scripts\Managers\SceneIndex.cs" />
      <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
      <Compile Include="Assets\Scripts\MultiplierFloor.cs" />
+     <Compile Include="Assets\Scripts\Player\LevelFinisher.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerBrain.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCubeStackHandler.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovementForward.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovementSwipe.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerPreferences.cs" />
-     <Compile Include="Assets\Scripts\SpinningPlatform.cs" />
      <Compile Include="Assets\Scripts\Utility\Constants.cs" />
      <Compile Include="Assets\Scripts\Utility\DestroyWithDelay.cs" />
      <Compile Include="Assets\Scripts\Utility\DontDestroyOnLoad.cs" />
+     <Compile Include="Assets\Scripts\Utility\Hover.cs" />
      <Compile Include="Assets\Scripts\Utility\Singleton.cs" />
+     <Compile Include="Assets\Scripts\Utility\SpinningPlatform.cs" />
+     <Compile Include="Assets\StorePackages\AurynSky\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
      <Compile Include="Assets\StorePackages\JMO AssetsVFX\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
      <Compile Include="Assets\StorePackages\JMO AssetsVFX\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
      <Compile Include="Assets\StorePackages\JMO AssetsVFX\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
@@ -148,6 +151,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\StorePackages\JMO Assets\Toony Colors Pro\Shaders\Legacy\Variants Base\TCP2_Mobile_OutlineBlending.shader" />
      <None Include="Assets\StorePackages\JMO Assets\Toony Colors Pro\Shaders\Standard PBS\TCP2_Standard PBS Outline (Specular).shader" />
+     <None Include="Assets\StorePackages\AurynSky\Gems Ultimate Pack\READ ME.txt" />
      <None Include="Assets\StorePackages\JMO Assets\Toony Colors Pro\Shaders Generated\Examples\PBS\Sketch.shader" />
      <None Include="Assets\StorePackages\JMO Assets\Toony Colors Pro\Shader Templates 2\Modules\Module_Texture Blending.txt" />
      <None Include="Assets\StorePackages\JMO Assets\Toony Colors Pro\Shader Templates 2\Modules\Module_ShadowHSV.txt" />
@@ -253,14 +257,23 @@
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.SpriteShape.Editor">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Recorder.Editor">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Path.Editor">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Recorder">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
@@ -277,11 +290,38 @@
  <Reference Include="Unity.Recorder.Base">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Mathematics">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.InternalAPIEngineBridge.001">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Common.Runtime">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.SpriteShape.Runtime">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Mathematics.Editor">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Common.Editor">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.InternalAPIEditorBridge.001">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PlasticSCM.Editor">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>

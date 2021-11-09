@@ -58,13 +58,20 @@ public class CubeStack : MonoBehaviour
         }
     }
     
-    public void RemoveCubes(int cubesToRemove)
+    public void RemoveCubes(int cubesToRemove, bool shouldDestroyCube = false)
     {
         for (int i = 0; i < cubesToRemove; i++)
         {
             Transform cube = transform.GetChild(1);
-            cube.SetParent(null);
-            cube.Translate(Vector3.back * 0.05f);
+            if (shouldDestroyCube)
+            {
+                Destroy(cube.gameObject);
+            }
+            else
+            {
+                cube.SetParent(null);
+                cube.Translate(Vector3.back * 0.1f);
+            }
             DecreaseCollider(); 
             
             _stackHeight -= 1;

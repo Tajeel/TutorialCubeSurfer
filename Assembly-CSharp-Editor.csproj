@@ -60,14 +60,23 @@
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.SpriteShape.Editor">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Recorder.Editor">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Path.Editor">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Recorder">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
@@ -84,11 +93,38 @@
  <Reference Include="Unity.Recorder.Base">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Mathematics">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.InternalAPIEngineBridge.001">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Common.Runtime">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.SpriteShape.Runtime">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Mathematics.Editor">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Common.Editor">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.InternalAPIEditorBridge.001">
+ <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PlasticSCM.Editor">
  <HintPath>C:/Users/RG 17/UnityProjects/TutorialCubeSurfer/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>

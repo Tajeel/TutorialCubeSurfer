@@ -1,6 +1,6 @@
 Toony Colors Pro, version 2.6
 2020/11/12
-© 2020 - Jean Moreno
+Â© 2020 - Jean Moreno
 =============================
 
 QUICK START

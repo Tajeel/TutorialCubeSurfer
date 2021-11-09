@@ -78,7 +78,7 @@ public class UIManager : Singleton<UIManager>
         switch (triggeredValue)
         {
             case Constants.LevelState.Completed:
-                AudioManager.Instance.PlaySound((int)AudioManager.AudioClipsEnum.LevelWin);
+                // AudioManager.Instance.PlaySound((int)AudioManager.AudioClipsEnum.LevelWin);
                 panelLevelCompleted.SetActive(true);
                 break;
             

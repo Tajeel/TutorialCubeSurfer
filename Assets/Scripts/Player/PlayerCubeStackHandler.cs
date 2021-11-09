@@ -84,7 +84,7 @@ public class PlayerCubeStackHandler : Singleton<PlayerCubeStackHandler>
                 }
                 else
                 {
-                    playerCubeStack.RemoveCubes(1);
+                    playerCubeStack.RemoveCubes(1, true);
                     EventManager.TriggerEvent(Constants.Events.CubesRemovedFromPlayerParamInt, 1);
                 }
             }

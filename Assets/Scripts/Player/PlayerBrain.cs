@@ -7,6 +7,7 @@ public class PlayerBrain : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private ParticleSystem surfingCubeSelected;
+    [SerializeField] private ParticleSystem diamondCollected;
     [SerializeField] private Transform playerAvatar;
     [SerializeField] private GameObject magnetPrefab;
     [SerializeField] private Transform trail;
@@ -38,8 +39,8 @@ public class PlayerBrain : MonoBehaviour
 
     private void CubesRemovedFromPlayerParamInt(int triggeredValue)
     {
-        surfingCubeSelected.Play();
-        animator.SetTrigger(Constants.PlayerAnimator.Spin);
+        animator.SetTrigger(Constants.PlayerAnimator.Jumping);
+        // animator.SetTrigger(Constants.PlayerAnimator.Spin);
         Vector3 position = playerAvatar.position;
         position = new Vector3(position.x, position.y - (triggeredValue * _heightFactor), position.z);
         playerAvatar.position = position;
@@ -68,6 +69,10 @@ public class PlayerBrain : MonoBehaviour
         {
             case Constants.Collectibles.Magnet:
                 EnableMagnet();
+                break;
+            
+            case Constants.Collectibles.Diamond:
+                diamondCollected.Play();
                 break;
             
             default:
