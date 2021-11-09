@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] private int nextLevel;
-    
+    public Camera playerCamera; // in inspector
     private int _currentLevel;
     [HideInInspector] public int currentDiamondsCount;
     public int multiplierFloorMultiplier;

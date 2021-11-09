@@ -107,12 +107,13 @@ public class PlayerCubeStackHandler : Singleton<PlayerCubeStackHandler>
             {
                 AudioManager.Instance.PlaySound((int)AudioManager.AudioClipsEnum.DiamondCollected);
                 EventManager.TriggerEvent(Constants.Events.CollectibleCollidedParamEnum, Constants.Collectibles.Diamond);
+                EventManager.TriggerEvent(Constants.Events.CollectibleCollidedParamGameObject, other.gameObject);
                 Destroy(other.gameObject);
             }
             
             else if (other.transform.CompareTag(Constants.Tags.Magnet))
             {
-                AudioManager.Instance.PlaySound((int)AudioManager.AudioClipsEnum.DiamondCollected);
+                // AudioManager.Instance.PlaySound((int)AudioManager.AudioClipsEnum.DiamondCollected);
                 Handheld.Vibrate();
                 EventManager.TriggerEvent(Constants.Events.CollectibleCollidedParamEnum, Constants.Collectibles.Magnet);
                 Destroy(other.gameObject);

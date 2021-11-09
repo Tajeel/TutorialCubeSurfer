@@ -8,6 +8,7 @@ internal class Constants
     internal class Events
     {
         public const string CollectibleCollidedParamEnum = "CollectibleCollidedParamEnum"; // this will send enum Collectibles representing its type
+        public const string CollectibleCollidedParamGameObject = "CollectibleCollidedParamGameObject"; // this will send collectible collided
         public const string LevelStateParamEnum = "LevelStateParamEnum"; // this will send enum LevelState representing its type
         public const string GameStateParamEnum = "GameStateParamEnum"; // this will send enum GameState representing its type
         public const string LevelRequestParamEnum = "LevelRequestParamEnum"; // this will send enum LevelRequest representing its type

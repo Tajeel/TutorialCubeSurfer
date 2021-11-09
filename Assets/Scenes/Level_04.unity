@@ -2136,6 +2136,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 681915291}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &681915293 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7832429863239710896, guid: 6b81789877312cf4c8e2b67cbaf18a7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 681915291}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &687288583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5461,6 +5467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: 5
+  playerCamera: {fileID: 681915293}
   currentDiamondsCount: 0
   multiplierFloorMultiplier: 0
 --- !u!1001 &1507805512

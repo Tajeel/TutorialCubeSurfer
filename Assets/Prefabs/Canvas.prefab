@@ -603,6 +603,7 @@ MonoBehaviour:
   panelLevelFailed: {fileID: 141636521749349661}
   panelStart: {fileID: 141636523103661523}
   panelLevelCompleted: {fileID: 141636522694169091}
+  spriteDiamondUI: {fileID: 141636521827186303}
 --- !u!1 &141636522087871772
 GameObject:
   m_ObjectHideFlags: 0

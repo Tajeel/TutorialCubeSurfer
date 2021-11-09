@@ -16,12 +16,14 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject panelLevelFailed;
     [SerializeField] private GameObject panelStart;
     [SerializeField] private GameObject panelLevelCompleted;
-    
+
+    public Transform spriteDiamondUI;
     private int _currentDiamondsCollectedCount;
 
     private void OnEnable()
     {
         EventManager.SubscribeEvent(Constants.Events.CollectibleCollidedParamEnum, OnCollectibleCollidedParamEnum);
+        EventManager.SubscribeEvent(Constants.Events.CollectibleCollidedParamGameObject, OnCollectibleCollidedParamGameObject);
         EventManager.SubscribeEvent(Constants.Events.LevelStateParamEnum, OnLevelStateParamEnum);
         EventManager.SubscribeEvent(Constants.Events.GameStateParamEnum, OnGameStateParamEnum);
     }
@@ -29,6 +31,7 @@ public class UIManager : Singleton<UIManager>
     private void OnDisable()
     {
         EventManager.UnSubscribeEvent(Constants.Events.CollectibleCollidedParamEnum, OnCollectibleCollidedParamEnum);
+        EventManager.UnSubscribeEvent(Constants.Events.CollectibleCollidedParamGameObject, OnCollectibleCollidedParamGameObject);
         EventManager.UnSubscribeEvent(Constants.Events.LevelStateParamEnum, OnLevelStateParamEnum);
         EventManager.UnSubscribeEvent(Constants.Events.GameStateParamEnum, OnGameStateParamEnum);
     }
@@ -45,7 +48,6 @@ public class UIManager : Singleton<UIManager>
         switch (triggeredValue)
         {
             case Constants.Collectibles.Diamond:
-                PlayDiamondCollectedAnimation();
                 StartCoroutine(SetDiamondCountAfterAnimationEnd());
                 break;
             
@@ -54,11 +56,13 @@ public class UIManager : Singleton<UIManager>
         }
     }
 
-    private void PlayDiamondCollectedAnimation()
+    private void OnCollectibleCollidedParamGameObject(GameObject triggeredValue)
     {
-        Instantiate(animationDiamondCollectedPrefab, transform);
+        GameObject go = Instantiate(animationDiamondCollectedPrefab, transform);
+        go.transform.position = GameManager.Instance.playerCamera.WorldToScreenPoint(triggeredValue.transform.position);
+        go.SetActive(true);
     }
-    
+
     private IEnumerator SetDiamondCountAfterAnimationEnd()
     {
         float timeBeforeCountUpdate = 1.1f;
