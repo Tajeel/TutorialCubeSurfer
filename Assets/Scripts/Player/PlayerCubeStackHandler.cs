@@ -113,7 +113,7 @@ public class PlayerCubeStackHandler : Singleton<PlayerCubeStackHandler>
             
             else if (other.transform.CompareTag(Constants.Tags.Magnet))
             {
-                // AudioManager.Instance.PlaySound((int)AudioManager.AudioClipsEnum.DiamondCollected);
+                AudioManager.Instance.PlaySound((int)AudioManager.AudioClipsEnum.DiamondCollected);
                 Handheld.Vibrate();
                 EventManager.TriggerEvent(Constants.Events.CollectibleCollidedParamEnum, Constants.Collectibles.Magnet);
                 Destroy(other.gameObject);
