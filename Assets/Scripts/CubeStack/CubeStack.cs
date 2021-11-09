@@ -58,20 +58,17 @@ public class CubeStack : MonoBehaviour
         }
     }
     
-    public void RemoveCubes(int cubesToRemove, bool shouldDestroyCube = false)
+    public void RemoveCubes(int cubesToRemove, bool shouldDestroyCube = false, float destroyDelay = 0f)
     {
         for (int i = 0; i < cubesToRemove; i++)
         {
             Transform cube = transform.GetChild(1);
             if (shouldDestroyCube)
             {
-                Destroy(cube.gameObject);
+                StartCoroutine(DestroySingleCube(cube, destroyDelay));
             }
-            else
-            {
-                cube.SetParent(null);
-                cube.Translate(Vector3.back * 0.1f);
-            }
+            cube.SetParent(null);
+            cube.Translate(Vector3.back * 0.1f);
             DecreaseCollider(); 
             
             _stackHeight -= 1;
@@ -116,5 +113,12 @@ public class CubeStack : MonoBehaviour
             position = new Vector3(position.x, position.y - (cubesHeight * _heightFactor), position.z);
             cube.position = position;
         }
+    }
+
+    private IEnumerator DestroySingleCube(Transform cube, float delayToDestroy)
+    {
+        // because Destroy(cube, delayToDestroy) is not working for some reason
+        yield return new WaitForSeconds(delayToDestroy);
+        Destroy(cube.gameObject);
     }
 }

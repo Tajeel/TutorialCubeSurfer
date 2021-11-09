@@ -39,13 +39,14 @@ public class PlayerCubeStackHandler : Singleton<PlayerCubeStackHandler>
             if (playerCubeStack.StackHeight <= 1)
             {
                 EventManager.TriggerEvent(Constants.Events.LevelStateParamEnum, Constants.LevelState.Completed);
+                playerCubeStack.RemoveCubes(1, true, 2f);
             }
             else
             {
                 GameManager.Instance.multiplierFloorMultiplier =
                     other.transform.GetComponent<MultiplierFloor>().floorMultiplier;
                 other.transform.GetComponent<BoxCollider>().enabled = false;
-                playerCubeStack.RemoveCubes(1);
+                playerCubeStack.RemoveCubes(1, true, 2f);
                 EventManager.TriggerEvent(Constants.Events.CubesRemovedFromPlayerParamInt, 1);
                 EventManager.TriggerEvent(Constants.Events.CollidedWithMultiplierFloorParamVoid);
             }

@@ -12,7 +12,7 @@ public class PlayerMovementSwipe : MonoBehaviour
     private void Awake()
     {
         _isMoveable = true;
-        _movementSpeedX = 0.02f;
+        _movementSpeedX = 0.03f;
         _minX = -0.5f;
         _maxX = 0.5f;
     }
