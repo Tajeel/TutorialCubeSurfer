@@ -10,10 +10,8 @@ public class AudioManager : Singleton<AudioManager>
         CollidedWithWall = 0,
         DiamondCollected,
         FlagPop,
-        LavaBurn,
         MagnetPick,
         SurfaceCubeCollected,
-        LevelWin
     }
 
     [SerializeField] private AudioSource audioSource;

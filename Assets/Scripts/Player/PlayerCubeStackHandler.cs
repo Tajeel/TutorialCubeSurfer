@@ -63,7 +63,6 @@ public class PlayerCubeStackHandler : Singleton<PlayerCubeStackHandler>
             // interact with barriers
             if (other.transform.CompareTag(Constants.Tags.Wall))
             {
-                AudioManager.Instance.PlaySound((int)AudioManager.AudioClipsEnum.CollidedWithWall);
                 CubeStack barrierCubeStack = other.transform.GetComponent<CubeStack>();
                 if (playerCubeStack.StackHeight <= barrierCubeStack.StackHeight)
                 {
@@ -78,7 +77,7 @@ public class PlayerCubeStackHandler : Singleton<PlayerCubeStackHandler>
             else
             {
                 // its lava floor
-                AudioManager.Instance.PlaySound((int)AudioManager.AudioClipsEnum.LavaBurn);
+                // AudioManager.Instance.PlaySound((int)AudioManager.AudioClipsEnum.LavaBurn);
                 if (playerCubeStack.StackHeight <= 1)
                 {
                     EventManager.TriggerEvent(Constants.Events.LevelStateParamEnum, Constants.LevelState.Failed);
@@ -113,7 +112,7 @@ public class PlayerCubeStackHandler : Singleton<PlayerCubeStackHandler>
             
             else if (other.transform.CompareTag(Constants.Tags.Magnet))
             {
-                AudioManager.Instance.PlaySound((int)AudioManager.AudioClipsEnum.DiamondCollected);
+                AudioManager.Instance.PlaySound((int)AudioManager.AudioClipsEnum.MagnetPick);
                 Handheld.Vibrate();
                 EventManager.TriggerEvent(Constants.Events.CollectibleCollidedParamEnum, Constants.Collectibles.Magnet);
                 Destroy(other.gameObject);

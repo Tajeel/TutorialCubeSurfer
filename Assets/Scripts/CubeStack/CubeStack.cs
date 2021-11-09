@@ -62,6 +62,7 @@ public class CubeStack : MonoBehaviour
     {
         for (int i = 0; i < cubesToRemove; i++)
         {
+            AudioManager.Instance.PlaySound((int)AudioManager.AudioClipsEnum.CollidedWithWall);
             Transform cube = transform.GetChild(1);
             if (shouldDestroyCube)
             {
