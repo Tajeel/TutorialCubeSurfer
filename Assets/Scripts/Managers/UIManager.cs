@@ -16,6 +16,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject panelLevelFailed;
     [SerializeField] private GameObject panelStart;
     [SerializeField] private GameObject panelLevelCompleted;
+    [SerializeField] private GameObject panelConfigMenu;
 
     public Transform spriteDiamondUI;
     private int _currentDiamondsCollectedCount;
@@ -116,5 +117,11 @@ public class UIManager : Singleton<UIManager>
     public void DisplayMultiplier()
     {
         uiTextMultiplierLevelCompletePanel.text = $"{GameManager.Instance.multiplierFloorMultiplier}x";
+    }
+
+    public void ShowConfigMenu(bool toShow)
+    {
+        panelConfigMenu.SetActive(toShow);
+        GameManager.Instance.PauseGame(toShow);
     }
 }

@@ -13,4 +13,14 @@ public class ButtonManager : MonoBehaviour
     {
         EventManager.TriggerEvent(Constants.Events.LevelRequestParamEnum, Constants.LevelRequest.GoToNext);
     }
+
+    public void OnButtonPressed_ConfigMenu()
+    {
+        UIManager.Instance.ShowConfigMenu(true);
+    }
+    
+    public void OnButtonPressed_ConfigMenuCross()
+    {
+        UIManager.Instance.ShowConfigMenu(false);
+    }
 }

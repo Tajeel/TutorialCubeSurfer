@@ -12,7 +12,9 @@ public class GameManager : Singleton<GameManager>
     public Camera playerCamera; // in inspector
     private int _currentLevel;
     [HideInInspector] public int currentDiamondsCount;
-    public int multiplierFloorMultiplier;
+    [HideInInspector]public int multiplierFloorMultiplier;
+    public float playerMovementSpeed;
+    
     
     protected override void Awake()
     {
@@ -20,6 +22,7 @@ public class GameManager : Singleton<GameManager>
         _currentLevel = PlayerPreferences.PlayerCurrentLevel;
         currentDiamondsCount = 0;
         multiplierFloorMultiplier = 1;
+        playerMovementSpeed = 3f;
     }
 
     private void OnEnable()
@@ -74,5 +77,10 @@ public class GameManager : Singleton<GameManager>
         currentDiamondsCount *= multiplierFloorMultiplier;
         UIManager.Instance.DisplayCurrentLevelDiamonds();
         UIManager.Instance.DisplayMultiplier();
+    }
+
+    public void PauseGame(bool toPause)
+    {
+        Time.timeScale = toPause ? 0f : 1f;
     }
 }

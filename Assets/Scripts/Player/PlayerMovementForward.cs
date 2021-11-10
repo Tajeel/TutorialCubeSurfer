@@ -7,14 +7,12 @@ public class PlayerMovementForward : MonoBehaviour
 {
     
     private bool _isMoveable;
-    private float _movementSpeed;
     private float _multiplierFloorHeightIncrease;
     private float _rotateDirection;
     private float _rotationSpeed;
     private void Awake()
     {
         _isMoveable = false;
-        _movementSpeed = 3f;
         _multiplierFloorHeightIncrease = 0.215f;
         _rotateDirection = 0f;
         _rotationSpeed = 4.5f;
@@ -47,7 +45,7 @@ public class PlayerMovementForward : MonoBehaviour
 
     private void MoveForward()
     {
-        transform.Translate(Vector3.forward * Time.fixedDeltaTime * _movementSpeed);
+        transform.Translate(Vector3.forward * Time.fixedDeltaTime * GameManager.Instance.playerMovementSpeed);
     }
     
     private void OnLevelStateParamEnum(Enum triggeredValue)
