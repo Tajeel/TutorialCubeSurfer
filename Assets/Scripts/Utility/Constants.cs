@@ -59,6 +59,7 @@ internal class Constants
         Level03,
         Level04,
         Level05,
+        Level06,
     }
     
     internal enum Collectibles

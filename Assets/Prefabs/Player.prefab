@@ -5707,7 +5707,6 @@ GameObject:
   - component: {fileID: 5441965455409607696}
   - component: {fileID: 6729064365929022048}
   - component: {fileID: 182839711}
-  - component: {fileID: 3617217135385814997}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -5762,25 +5761,6 @@ MonoBehaviour:
   magnetPrefab: {fileID: 645313158286223531, guid: 245d282324893c5488fae56c91d6fadc,
     type: 3}
   trail: {fileID: 7098627967955265820}
---- !u!95 &3617217135385814997
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5441965455409607711}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ab47165552f4d634a81d6a5621b3ed98, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5450810954364875794
 GameObject:
   m_ObjectHideFlags: 0

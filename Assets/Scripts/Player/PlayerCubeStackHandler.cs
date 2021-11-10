@@ -63,6 +63,7 @@ public class PlayerCubeStackHandler : Singleton<PlayerCubeStackHandler>
             // interact with barriers
             if (other.transform.CompareTag(Constants.Tags.Wall))
             {
+                other.transform.GetComponent<BoxCollider>().enabled = false;
                 CubeStack barrierCubeStack = other.transform.GetComponent<CubeStack>();
                 if (playerCubeStack.StackHeight <= barrierCubeStack.StackHeight)
                 {

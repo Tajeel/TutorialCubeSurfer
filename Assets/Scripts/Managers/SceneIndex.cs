@@ -12,7 +12,7 @@ public class SceneIndex : Singleton<SceneIndex>
     private IEnumerator LoadLevel()
     {
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(PlayerPreferences.PlayerCurrentLevel);
-        // SceneManager.LoadScene((int)Constants.GameScenesIndex.Level02);
+        // SceneManager.LoadScene(PlayerPreferences.PlayerCurrentLevel);
+        SceneManager.LoadScene((int)Constants.GameScenesIndex.Level06);
     }
 }
