@@ -12,9 +12,9 @@ public class PlayerMovementSwipe : MonoBehaviour
     private void Awake()
     {
         _isMoveable = true;
-        _movementSpeedX = 0.04f;
-        _minX = -0.5f;
-        _maxX = 0.5f;
+        _movementSpeedX = 3f;
+        _minX = -1.667f;
+        _maxX = 1.667f;
     }
 
     private void OnEnable()
@@ -50,22 +50,14 @@ public class PlayerMovementSwipe : MonoBehaviour
 
     private void MovePlayerToLeft()
     {
-        Vector3 position = transform.position;
-        float xPos = position.x - _movementSpeedX;
-
-        xPos = Mathf.Clamp(xPos, _minX, _maxX);
-        position = new Vector3(xPos, position.y, position.z);
-        transform.position = position;
+        transform.Translate(Vector3.left * _movementSpeedX * Time.fixedDeltaTime);
+        transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, _minX, _maxX), 0, 0);
     }
     
     private void MovePlayerToRight()
     {
-        Vector3 position = transform.position;
-        float xPos = position.x + _movementSpeedX;
-        
-        xPos = Mathf.Clamp(xPos, _minX, _maxX);
-        position = new Vector3(xPos, position.y, position.z);
-        transform.position = position;
+        transform.Translate(Vector3.right * _movementSpeedX * Time.fixedDeltaTime);
+        transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, _minX, _maxX), 0, 0);
     }
 
     private void OnLevelStateParamEnum(Enum triggeredValue)

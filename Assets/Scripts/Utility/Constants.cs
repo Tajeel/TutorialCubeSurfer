@@ -15,6 +15,7 @@ internal class Constants
         public const string CubesAddedToPlayerParamInt = "CubesAddedToPlayerParamInt"; // this will send int representing cubes add count
         public const string CubesRemovedFromPlayerParamInt = "CubesRemovedFromPlayerParamInt"; // this will send int representing cubes add count
         public const string CollidedWithMultiplierFloorParamVoid = "CollidedWithMultiplierFloorParamVoid";
+        public const string LevelTurnParamEnum = "LevelTurnParamEnum"; // this will send enum representing turn
     }
 
     internal class Tags
@@ -84,6 +85,12 @@ internal class Constants
     {
         Retry = 0,
         GoToNext,
+    }
+    
+    internal enum LevelTurn
+    {
+        Left = 0,
+        Right,
     }
     #endregion
     

@@ -9,12 +9,15 @@ public class PlayerMovementForward : MonoBehaviour
     private bool _isMoveable;
     private float _movementSpeed;
     private float _multiplierFloorHeightIncrease;
-    
+    private float _rotateDirection;
+    private float _rotationSpeed;
     private void Awake()
     {
         _isMoveable = false;
         _movementSpeed = 3f;
         _multiplierFloorHeightIncrease = 0.215f;
+        _rotateDirection = 0f;
+        _rotationSpeed = 4.5f;
     }
 
     private void OnEnable()
@@ -22,6 +25,7 @@ public class PlayerMovementForward : MonoBehaviour
         EventManager.SubscribeEvent(Constants.Events.LevelStateParamEnum, OnLevelStateParamEnum);
         EventManager.SubscribeEvent(Constants.Events.GameStateParamEnum, OnGameStateParamEnum);
         EventManager.SubscribeEvent(Constants.Events.CollidedWithMultiplierFloorParamVoid, OnCollidedWithMultiplierFloorParamVoid);
+        EventManager.SubscribeEvent(Constants.Events.LevelTurnParamEnum, OnLevelTurnParamEnum);
     }
     
     private void OnDisable()
@@ -29,6 +33,7 @@ public class PlayerMovementForward : MonoBehaviour
         EventManager.UnSubscribeEvent(Constants.Events.LevelStateParamEnum, OnLevelStateParamEnum);
         EventManager.UnSubscribeEvent(Constants.Events.GameStateParamEnum, OnGameStateParamEnum);
         EventManager.UnSubscribeEvent(Constants.Events.CollidedWithMultiplierFloorParamVoid, OnCollidedWithMultiplierFloorParamVoid);
+        EventManager.UnSubscribeEvent(Constants.Events.LevelTurnParamEnum, OnLevelTurnParamEnum);
     }
 
     void FixedUpdate()
@@ -36,6 +41,7 @@ public class PlayerMovementForward : MonoBehaviour
         if (_isMoveable)
         {
             MoveForward();
+            transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.Euler (0, _rotateDirection, 0), _rotationSpeed * Time.deltaTime);
         }
     }
 
@@ -72,5 +78,22 @@ public class PlayerMovementForward : MonoBehaviour
         position = new Vector3(position.x, position.y + _multiplierFloorHeightIncrease,
             position.z);
         transform.position = position;
+    }
+
+    private void OnLevelTurnParamEnum(Enum triggeredValue)
+    {
+        switch (triggeredValue)
+        {
+            case Constants.LevelTurn.Left:
+                _rotateDirection = transform.eulerAngles.y - 90f;
+                break;
+
+            case Constants.LevelTurn.Right:
+                _rotateDirection = transform.eulerAngles.y + 90f;
+                break;
+
+            default:
+                break;
+        }
     }
 }
